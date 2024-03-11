@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main page</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <main>
+        <div id="container">
+            <div id="head">Welcome to the to-do-list</div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo nisi accusantium ea est? Saepe
+                veritatis tempora praesentium delectus error ad inventore placeat eius numquam. In hic dolores quos
+                asperiores.</p>
+            <form action="none" method="none" id="new-user-login">
+                <label for="new-user-name">
+                    Name : <input type="text" id="new-user-name">
+                </label>
+                <label for="new-user-password">
+                    Password : <input type="password" id="new-user-password">
+                </label>
+                <button class="btn-design" id="new-user-login-btn">Enter</button>
+                <button class="btn-design" id="old-user-btn">Old User</button>
+            </form>
+            <dialog id="old-user-dialog">
+                <form action="none" method="dialog" id="old-user-login-form">
+                    <label for="old-user-name">
+                        Name : <input type="text" id="old-user-name">
+                    </label>
+                    <label for="old-user-password">
+                        Password : <input type="password" id="old-user-password">
+                    </label>
+                    <button class="btn-design" id="old-user-login-btn">Enter</button>
+                    <button class="btn-design" id="old-user-back-btn">Back</button>
+                </form>
+            </dialog>
+        </div>
+        <dialog id="task-box">
+            <div id="header"></div>
+            <button id="open-add-task-btn" class="btn-design">Add Task</button>
+            <div id="current-task-list"></div>
+        </dialog>
+        <dialog id="add-task-page" >
+            <div><button id="cancle-btn">❌</button></div>
+            <form>
+                <label for="task-title">
+                    <p>Title</p><input type="text" id="task-title" required>
+                </label>
+                <label for="task-date">
+                    <p>Date</p><input type="date" id="task-date" required>
+                </label>
+                <label for="task-desc">
+                    <p>Description</p><textarea id="task-desc" cols="40" rows="10" required></textarea>
+                </label>
+                <button id="add-task-btn" class="btn-design">Add Task</button>
+            </form> 
+        </dialog>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>
