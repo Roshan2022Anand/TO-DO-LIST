@@ -5,6 +5,7 @@
     color: var(--text-color);
     font-weight: bold;
     /* text-shadow: 2px 2px white; */
+
 }
 
 :root {
@@ -104,10 +105,16 @@ label {
     border-radius: 5px;
     display: flex;
 }
-.single-task-list > div{
-    flex-grow: 1;
+.task-tick-div{
+    width:50px;
+}
+input[type="checkbox"]{
+    margin-top: 25px;
+    width: 50%;
+    height: 50%;
 }
 .task-info{
+    flex-grow: 1;
     text-align: left;
     padding: 5px;
 }

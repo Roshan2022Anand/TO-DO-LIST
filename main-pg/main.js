@@ -10,24 +10,42 @@ const currentTaskList = document.getElementById('current-task-list');
 const addTaskPg = document.getElementById('add-task-page');
 const addTaskBtn = document.getElementById('add-task-btn');
 let currentUserName;
-
 let tasks = 0;
+const clearInputValue=()=>{
+    newUserName.value="";
+    newUserPassword.value="";
+    oldUserName.value="";
+    oldUserPassword.value="";
+}
 //funtion to open the task page for user
-const displayTaskPage = (name, password) => {
-
-
-    return;
+const displayTaskPage = (name) => {
+    let oldUserTaskObj = JSON.parse(storage[name]);
+    oldUserTaskObj = oldUserTaskObj.userTaskObj;
+    let tasks = 0;
+    for (let obj in oldUserTaskObj){
+        tasks++;
+        currentTaskList.innerHTML += `
+    <div class="single-task-list">
+    <div class="task-tick-div"><input type="checkbox"  class="task-tick-box" value="input-${tasks}"></div>
+    <div class="task-info" id="task-info-input-${tasks}">
+    <p>Title :${oldUserTaskObj[obj].title}</p>
+    <p>Date:${oldUserTaskObj[obj].date}</p>
+    <p>Description:${oldUserTaskObj[obj].desc}</p>
+    </div>
+</div>
+    `;
+        addEventToCheckBox();
+    }
 }
 //funtion to show the form list for the old user
 document.getElementById('old-user-btn').addEventListener("click", (e) => {
     e.preventDefault();
     document.getElementById('old-user-dialog').show();
+    clearInputValue();
 })
 //funtion to check if the current old user exits
 document.getElementById('old-user-login-btn').addEventListener("click", (e) => {
-    // e.preventDefault();
-    console.log('hai');
-
+    e.preventDefault();
     let name = oldUserName.value;
     let password = oldUserPassword.value;
     if (name == "" || password == "") {
@@ -36,9 +54,10 @@ document.getElementById('old-user-login-btn').addEventListener("click", (e) => {
     } else {
         for (let i = 0; i < storage.length; i++) {
             if (storage.key(i) == name && JSON.parse(storage[storage.key(0)]).password == password) {
-                welcome.innerHTML = `<h1>Welcome back ${name}</h1>`
-
-                displayTaskPage(name, password);
+                welcome.innerHTML = `<h1>Welcome back ${name}</h1>`;
+                taskBox.show();
+                displayTaskPage(name);
+                clearInputValue();
             } else {
                 alert('invalid name or password');
             }
@@ -65,7 +84,12 @@ document.getElementById('new-user-login-btn').addEventListener("click", (e) => {
         newTaskList = JSON.stringify(newTaskList);
         storage.setItem(name, newTaskList);
         taskBox.show();
+        clearInputValue();
     }
+})
+document.getElementById('back-to-login-btn').addEventListener("click",()=>{
+    currentTaskList.innerHTML = "";
+    taskBox.close();
 })
 document.getElementById('open-add-task-btn').addEventListener("click", (e) => {
     e.preventDefault();
@@ -93,7 +117,7 @@ addTaskBtn.addEventListener("click", (e) => {
     tasks++;
     currentTaskList.innerHTML += `
     <div class="single-task-list">
-    <div><input type="checkbox"  class="task-tick-box" value="input-${tasks}"></div>
+    <div class="task-tick-div"><input type="checkbox"  class="task-tick-box" value="input-${tasks}"></div>
     <div class="task-info" id="task-info-input-${tasks}">
     <p>Title :${title}</p>
     <p>Date:${date}</p>
