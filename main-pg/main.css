@@ -4,28 +4,32 @@
     box-sizing: border-box;
     color: var(--text-color);
     font-weight: bold;
-    /* text-shadow: 2px 2px white; */
-
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 :root {
-    --background-color: #FBFACD;
-    --btn-color: #BA94D1;
-    --text-color: #7F675B;
+    --background-color: #FFFFFF;
+    --btn-color: #2D70FD;
+    --text-color: #11175E;
     --hover-color: #FF9B42;
-    --border-color: #62A8AC;
+    --border-color: #000000;
 }
 
 body {
     background-color: var(--border-color);
 }
-
+#head{
+    font-size: 27px;
+}
+input{
+    padding: 2px;
+}
 #container {
     background-color: var(--background-color);
     border-radius: 10px;
     border: 3px solid var(--border-color);
-    width: 500px;
-    height: 700px;
+    width: 600px;
+    height: 720px;
     text-align: center;
     margin: 50px auto;
     padding: 100px;
@@ -36,36 +40,47 @@ body {
     margin-top: 20px;
 }
 
-label {
-
+#new-user-login {
+    text-align: left;
     display: block;
 }
-
+#new-user-login input,#old-user-dialog input{
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid;
+    margin: 4px 0;
+}
 .btn-design {
     background-color: var(--btn-color);
     border: none;
     border-radius: 5px;
     width: 110px;
     height: 40px;
+    margin-top: 5px;
 }
-
-#old-user-dialog {
-    width: 490px;
-    height: 200px;
-    position: relative;
-    left: -97px;
-    bottom: 200px;
-    padding: 50px;
+.btn-design:hover{
     background-color: var(--background-color);
+    color: var(--btn-color);
+    border: 3px solid var(--text-color);
+}
+#old-user-dialog {
+    width: 415px;
+    height: 180px;
+    padding: 10px;
+    text-align: left;
+    background-color: var(--background-color);
+    position: relative;
+    left: -10px;
+    bottom: 178px;
     border: none;
 }
-
 #task-box {
     position: absolute;
-    top: 0;
+    top: 5px;
     background-color: var(--background-color);
     border-radius: 10px;
-    border: 3px solid var(--border-color);
+    border: 3px dashed var(--border-color);
     width: 500px;
     height: 700px;
     text-align: center;
@@ -75,8 +90,8 @@ label {
 
 #add-task-page {
     position: absolute;
-    top: 0;
-    background-color: var(--hover-color);
+    top: 15px;
+    background-color: var(--text-color);
     border-radius: 10px;
     border: 3px solid var(--border-color);
     width: 400px;
@@ -85,7 +100,9 @@ label {
     margin: 50px auto;
     font-size: 25px;
 }
-
+.add-task-text{
+    color:white;
+}
 #add-task-page>div,#cancle-btn {
     text-align: right;
     border: none;
@@ -117,4 +134,7 @@ input[type="checkbox"]{
     flex-grow: 1;
     text-align: left;
     padding: 5px;
+}
+button{
+    color: var(--background-color);
 }
