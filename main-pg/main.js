@@ -47,6 +47,7 @@ document.getElementById('old-user-btn').addEventListener("click", (e) => {
 document.getElementById('old-user-login-btn').addEventListener("click", (e) => {
     e.preventDefault();
     let name = oldUserName.value;
+    currentUserName=name;
     let password = oldUserPassword.value;
     if (name == "" || password == "") {
         alert("please fill your name and password");
