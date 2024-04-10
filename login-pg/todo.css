@@ -32,35 +32,26 @@
     padding: 20px;
 }
 
-button {
+a{
     width: 325px;
     height: 60px;
     display: block;
     border: none;
-    background-color: white;
+    background-color:#BA94D1;
     margin: 0 auto;
     border-radius: 5px;
     transition: all 0.2s ease-in;
-}
-
-button:hover>a {
-    transform: scale(1.2);
     color: white;
-}
-
-button:hover {
-    /* width: 330px;
-    height: 65px; */
-    transform: scale(1.1);
-    background-color: #BA94D1;
-    color: #BA94D1;
-}
-
-button a {
-    color: #BA94D1;
-    font-size: 20px;
-    font-weight: bolder;
     text-decoration: none;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 22px;
+}
+
+a:hover {
+    transform: scale(1.2);
+    color: #BA94D1;
+    background-color: white;
 }
 
 .circle {
