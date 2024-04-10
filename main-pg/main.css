@@ -50,6 +50,7 @@ input{
     border-radius: 5px;
     border: 1px solid;
     margin: 4px 0;
+    
 }
 .btn-design {
     background-color: var(--btn-color);
@@ -137,4 +138,11 @@ input[type="checkbox"]{
 }
 button{
     color: var(--background-color);
+}
+
+
+@media only screen and (max-width: 520px) {
+    #container{
+        background-color: var(--border-color);
+    }
 }
