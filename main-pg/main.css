@@ -18,12 +18,15 @@
 body {
     background-color: var(--border-color);
 }
-#head{
+
+#head {
     font-size: 27px;
 }
-input{
+
+input {
     padding: 2px;
 }
+
 #container {
     background-color: var(--background-color);
     border-radius: 10px;
@@ -44,14 +47,17 @@ input{
     text-align: left;
     display: block;
 }
-#new-user-login input,#old-user-dialog input{
+
+#new-user-login input,
+#old-user-dialog input {
     display: block;
     width: 100%;
     border-radius: 5px;
     border: 1px solid;
     margin: 4px 0;
-    
+
 }
+
 .btn-design {
     background-color: var(--btn-color);
     border: none;
@@ -60,11 +66,13 @@ input{
     height: 40px;
     margin-top: 5px;
 }
-.btn-design:hover{
+
+.btn-design:hover {
     background-color: var(--background-color);
     color: var(--btn-color);
     border: 3px solid var(--text-color);
 }
+
 #old-user-dialog {
     width: 415px;
     height: 180px;
@@ -72,10 +80,11 @@ input{
     text-align: left;
     background-color: var(--background-color);
     position: relative;
-    left: -10px;
+    left: -22px;
     bottom: 178px;
     border: none;
 }
+
 #task-box {
     position: absolute;
     top: 5px;
@@ -101,41 +110,50 @@ input{
     margin: 50px auto;
     font-size: 25px;
 }
-.add-task-text{
-    color:white;
+
+.add-task-text {
+    color: white;
 }
-#add-task-page>div,#cancle-btn {
+
+#add-task-page>div,
+#cancle-btn {
     text-align: right;
     border: none;
     background-color: transparent;
     text-align: right;
 }
 
-#add-task-page input,textarea {
+#add-task-page input,
+textarea {
     width: 100%;
     padding: 10px;
     border-radius: 10px;
 }
-.single-task-list{
+
+.single-task-list {
     margin: 5px;
     padding: 5px;
-    border:2px solid  var(--border-color);
+    border: 2px solid var(--border-color);
     border-radius: 5px;
     display: flex;
 }
-.task-tick-div{
-    width:50px;
+
+.task-tick-div {
+    width: 50px;
 }
-input[type="checkbox"]{
+
+input[type="checkbox"] {
     margin-top: 25px;
     width: 50%;
     height: 50%;
 }
-.task-info{
+
+.task-info {
     flex-grow: 1;
     text-align: left;
     padding: 5px;
 }
-button{
+
+button {
     color: var(--background-color);
 }
